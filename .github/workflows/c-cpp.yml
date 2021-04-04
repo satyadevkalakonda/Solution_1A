@@ -13,8 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: make
-      run: make
-    - name: make check
-      run: make run
+    - name: build
+      run: make create
+    - name: run
+      run: .\test.exe
 
