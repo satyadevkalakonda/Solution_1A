@@ -16,6 +16,5 @@ jobs:
     - name: make
       run: make
     - name: make check
-      run: make create
-    - name: run
-      run:  test.exe
+      run: make run
+
