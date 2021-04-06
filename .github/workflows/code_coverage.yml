@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: build
-      run: gcc -fprofile-arcs -ftestcoverage test_main.c
+      run: gcc -fprofile-arcs -ftest-coverage test_main.c
     - name: run
       run: ./test.out
     - name: coverage-create
