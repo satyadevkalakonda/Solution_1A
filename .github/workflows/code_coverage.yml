@@ -12,14 +12,14 @@ on:
 jobs:
   build:
 
-    runs-on:  windows-latest
+    runs-on:  ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: build
       run: gcc -fprofile-arcs -ftestcoverage test_main.c
     - name: run
-      run: .\test.exe
+      run: ./test.out
     - name: coverage-create
       run:  gcov test_main.c
     - name: check
