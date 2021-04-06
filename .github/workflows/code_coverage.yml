@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on:  windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: gcc -fprofile-arcs -ftestcoverage test_main.c
+    - name: run
+      run: .\test.exe
+    - name: coverage-create
+      run:  gcov test_main.c
+    - name: check
+      run: gcov -b test_main.c
+      
+      
+      
